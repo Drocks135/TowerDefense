@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://chmfc7m77qxk"]
+
+[ext_resource type="Script" path="res://Assets/Towers/BasicTurret1/BasicTurret1.cs" id="1_8vy8o"]
+[ext_resource type="Texture2D" uid="uid://bb0660dua0sj0" path="res://PNG/BasicTurret1.png" id="2_3vtaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wehr1"]
+
+[node name="BasicTurret_1" type="Node2D"]
+script = ExtResource("1_8vy8o")
+
+[node name="BasicTurret1" type="Sprite2D" parent="."]
+texture = ExtResource("2_3vtaf")
+
+[node name="Radius" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radius"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_wehr1")

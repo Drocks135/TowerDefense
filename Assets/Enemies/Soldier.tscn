@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2gjpg1itljpy"]
+
+[ext_resource type="Script" path="res://Assets/Enemies/Soldier.cs" id="1_mddx8"]
+[ext_resource type="Texture2D" uid="uid://7t857apbewa4" path="res://PNG/BasicEnemy1.png" id="2_lmupi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rj2jx"]
+radius = 13.0375
+
+[node name="Soldier" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_mddx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+scale = Vector2(1.90864, 1.16148)
+shape = SubResource("CircleShape2D_rj2jx")
+
+[node name="TowerDefenseTile245" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_lmupi")

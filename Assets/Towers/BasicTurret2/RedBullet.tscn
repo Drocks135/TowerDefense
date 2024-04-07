@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://jtg8ytdyv727"]
+
+[ext_resource type="Script" path="res://Assets/Towers/BasicTurret2/RedBullet.cs" id="1_rss83"]
+[ext_resource type="Texture2D" uid="uid://gverub0r04l4" path="res://PNG/Default size/towerDefense_tile251.png" id="2_n8u4f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lwa2n"]
+radius = 13.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctmlf"]
+height = 38.0
+
+[node name="RedBullet" type="CharacterBody2D"]
+script = ExtResource("1_rss83")
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_n8u4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1, -0.875001)
+shape = SubResource("CapsuleShape2D_lwa2n")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ctmlf")

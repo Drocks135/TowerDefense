@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c07fpvtkusslb"]
+
+[ext_resource type="Script" path="res://Assets/Towers/BasicTurret2/BasicTurret2.cs" id="1_jlqat"]
+[ext_resource type="Texture2D" uid="uid://bb0660dua0sj0" path="res://PNG/BasicTurret1.png" id="2_e8bkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kokk"]
+size = Vector2(86, 91)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3wnh"]
+radius = 29.2615
+
+[node name="BasicTurret2" type="StaticBody2D"]
+script = ExtResource("1_jlqat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0.5)
+shape = SubResource("RectangleShape2D_3kokk")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(72, 0)
+
+[node name="BasicTurret2" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_e8bkt")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
+scale = Vector2(14.3876, -13.0352)
+shape = SubResource("CircleShape2D_n3wnh")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[connection signal="body_entered" from="Tower" to="." method="OnTowerBodyEntered"]
+[connection signal="body_exited" from="Tower" to="." method="OnTowerBodyExited"]

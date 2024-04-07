@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://csubdcjqr76d6"]
+
+[ext_resource type="Texture2D" uid="uid://cmmawvuswulrb" path="res://PNG/Default size/towerDefense_tile250.png" id="1_fcj13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvfy5"]
+radius = 32.573
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vllps"]
+radius = 475.105
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kvfy5")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_fcj13")
+
+[node name="TowerRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerRadius"]
+shape = SubResource("CircleShape2D_vllps")
